@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_action"
+    app:startDestination="@id/fragmentActionA">
+    <fragment
+        android:id="@+id/fragmentActionA"
+        android:name="com.example.navigationprojectexample.nav_action.FragmentActionA"
+        android:label="fragment_action_a"
+        tools:layout="@layout/fragment_action_a">
+        <action
+            android:id="@+id/action_fragmentActionA_to_fragmentActionB"
+            app:destination="@id/fragmentActionB" />
+        <action
+            android:id="@+id/action_fragmentActionA_to_fragmentActionC"
+            app:destination="@id/fragmentActionC" />
+        <action
+            android:id="@+id/action_fragmentActionA_to_fragmentActionE"
+            app:destination="@id/fragmentActionE" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentActionB"
+        android:name="com.example.navigationprojectexample.nav_action.FragmentActionB"
+        android:label="fragment_action_b"
+        tools:layout="@layout/fragment_action_b">
+        <action
+            android:id="@+id/action_fragmentActionB_to_fragmentActionC"
+            app:destination="@id/fragmentActionC" />
+        <argument
+            android:name="data"
+            app:argType="integer" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentActionC"
+        android:name="com.example.navigationprojectexample.nav_action.FragmentActionC"
+        android:label="fragment_action_c"
+        tools:layout="@layout/fragment_action_c">
+        <action
+            android:id="@+id/action_fragmentActionC_to_fragmentActionD"
+            app:destination="@id/fragmentActionD"
+            app:popUpTo="@id/fragmentActionA"
+            app:popUpToInclusive="true" />
+
+        <argument
+            android:name="listData"
+            app:argType="integer[]" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentActionD"
+        android:name="com.example.navigationprojectexample.nav_action.FragmentActionD"
+        android:label="fragment_action_d"
+        tools:layout="@layout/fragment_action_d">
+        <action
+            android:id="@+id/action_fragmentActionD_to_fragmentActionA"
+            app:destination="@id/fragmentActionA" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentActionE"
+        android:name="com.example.navigationprojectexample.nav_action.FragmentActionE"
+        android:label="fragment_action_e"
+        tools:layout="@layout/fragment_action_e" />
+</navigation>
